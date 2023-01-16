@@ -2,6 +2,7 @@ package com.example.GameBaron.Entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table
@@ -11,7 +12,9 @@ public class Badge {
     @SequenceGenerator(name = "badge_sequence", sequenceName = "badge_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "badge_sequence")
     private Integer BadgeId;
+    @NotBlank(message = "The name field is mandatory!")
     private String BadgeName;
+    @NotBlank(message = "The description field is mandatory!")
     private String BadgeDescription;
 
     @JsonBackReference(value = "user-badge")

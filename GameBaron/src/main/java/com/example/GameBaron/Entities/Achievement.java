@@ -2,6 +2,7 @@ package com.example.GameBaron.Entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table
@@ -11,9 +12,11 @@ public class Achievement {
     @SequenceGenerator(name = "achievement_sequence", sequenceName = "achievement_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "achievement_sequence")
     private Integer AchievementId;
-
+    @NotBlank(message = "The name field is mandatory!")
     private String AchievementName;
+    @NotBlank(message = "The description field is mandatory!")
     private String AchievementDescription;
+    @NotBlank(message = "The rarity field is mandatory!")
     private String AchievementRarity;
 
     @JsonBackReference(value = "game-achievement")

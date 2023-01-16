@@ -2,6 +2,10 @@ package com.example.GameBaron.Entities;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.Set;
 
@@ -14,15 +18,24 @@ public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
     private Integer UserId;
     @Column(unique = true)
+    @NotBlank(message = "The username field is mandatory!")
     private String UserName;
+    @NotBlank(message = "The password field is mandatory!")
     private String Password;
+    @NotBlank(message = "The first name field is mandatory!")
     private String FirstName;
+    @NotBlank(message = "The last name field is mandatory!")
     private String LastName;
+    @NotBlank(message = "The email field is mandatory!")
     private String Email;
+    @NotBlank(message = "The phone field is mandatory!")
     private String PhoneNumber;
 
+    @Column(columnDefinition = "integer default 0")
+    @Min(0)
     private Integer WalletMoney;
 
+    @NotBlank(message = "The country field is mandatory!")
     private String Country;
     private String City;
     private String StreetName;

@@ -2,6 +2,7 @@ package com.example.GameBaron.Entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table
@@ -11,8 +12,11 @@ public class Tool {
     @SequenceGenerator(name = "tool_sequence", sequenceName = "tool_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tool_sequence")
     private Integer ToolId;
+    @NotBlank(message = "The name field is mandatory!")
     private String ToolName;
+    @NotBlank(message = "The description field is mandatory!")
     private String ToolDescription;
+    @NotBlank(message = "The version field is mandatory!")
     private String ToolVersion;
 
     @JsonBackReference(value = "game-tool")

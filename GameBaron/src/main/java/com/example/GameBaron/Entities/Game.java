@@ -2,6 +2,8 @@ package com.example.GameBaron.Entities;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.Set;
 
@@ -13,11 +15,19 @@ public class Game {
     @SequenceGenerator(name = "game_sequence", sequenceName = "game_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "game_sequence")
     private Integer GameId;
+    @NotBlank(message = "The name field is mandatory!")
     private String GameName;
+    @NotBlank(message = "The genre field is mandatory!")
     private String GameGenre;
+    @NotBlank(message = "The creator field is mandatory!")
     private String GameCreator;
+    @NotBlank(message = "The publisher field is mandatory!")
     private String GamePublisher;
+    @NotBlank(message = "The description field is mandatory!")
     private String GameDescription;
+
+    @Column(columnDefinition = "integer default 0")
+    @Min(0)
     private Integer GamePrice;
 
     @JsonManagedReference(value = "game-tool")
