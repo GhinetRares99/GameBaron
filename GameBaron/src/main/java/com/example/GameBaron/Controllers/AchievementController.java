@@ -2,6 +2,7 @@ package com.example.GameBaron.Controllers;
 
 import com.example.GameBaron.Entities.Achievement;
 import com.example.GameBaron.Services.AchievementService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class AchievementController {
 
     @PostMapping
     @RequestMapping(path = "GameBaron/Achievement/addAchievement")
-    public void addAchievement(@RequestBody Achievement achievement){
+    public void addAchievement(@Valid @RequestBody Achievement achievement){
         achievementService.addAchievement(achievement);
     }
 

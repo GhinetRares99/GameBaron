@@ -3,6 +3,7 @@ package com.example.GameBaron.Controllers;
 import com.example.GameBaron.Entities.Badge;
 import com.example.GameBaron.Entities.User;
 import com.example.GameBaron.Services.BadgeService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +25,7 @@ public class BadgeController {
 
     @PostMapping
     @RequestMapping(path = "GameBaron/Badge/addBadge")
-    public void addBadge(@RequestBody Badge badge){
+    public void addBadge(@Valid @RequestBody Badge badge){
         badgeService.addBadge(badge);
     }
 

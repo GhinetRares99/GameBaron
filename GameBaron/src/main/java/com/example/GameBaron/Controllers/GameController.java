@@ -2,6 +2,7 @@ package com.example.GameBaron.Controllers;
 
 import com.example.GameBaron.Entities.Game;
 import com.example.GameBaron.Services.GameService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class GameController {
 
     @PostMapping
     @RequestMapping(path = "GameBaron/Game/addGame")
-    public void registerUser(@RequestBody Game game){
+    public void registerUser(@Valid @RequestBody Game game){
         //System.out.println(user);
         gameService.addGame(game);
     }

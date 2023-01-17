@@ -2,6 +2,7 @@ package com.example.GameBaron.Controllers;
 
 import com.example.GameBaron.Entities.User;
 import com.example.GameBaron.Services.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class UserController {
 
     @PostMapping
     @RequestMapping(path = "GameBaron/User/registerUser")
-    public void registerUser(@RequestBody User user){
+    public void registerUser(@Valid @RequestBody User user){
         //System.out.println(user);
         userService.registerUser(user);
     }

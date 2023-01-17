@@ -2,6 +2,7 @@ package com.example.GameBaron.Controllers;
 
 import com.example.GameBaron.Entities.Possession;
 import com.example.GameBaron.Services.PossessionService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class PossessionController {
 
     @PostMapping
     @RequestMapping(path = "GameBaron/Possession/addPossession")
-    public void addPossession(@RequestBody Possession possession){ possessionService.addPossession(possession); }
+    public void addPossession(@Valid @RequestBody Possession possession){ possessionService.addPossession(possession); }
 
     @DeleteMapping
     @RequestMapping(path = "GameBaron/Possession/deletePossession/{possessionId}")

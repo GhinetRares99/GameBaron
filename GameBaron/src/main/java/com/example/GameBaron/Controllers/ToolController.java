@@ -3,6 +3,7 @@ package com.example.GameBaron.Controllers;
 import com.example.GameBaron.Entities.Badge;
 import com.example.GameBaron.Entities.Tool;
 import com.example.GameBaron.Services.ToolService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +27,7 @@ public class ToolController {
 
     @PostMapping
     @RequestMapping(path = "GameBaron/Tool/addTool")
-    public void addTool(@RequestBody Tool tool){
+    public void addTool(@Valid @RequestBody Tool tool){
         toolService.addTool(tool);
     }
 
