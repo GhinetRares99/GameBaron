@@ -45,10 +45,6 @@ public class Achievement {
         return AchievementId;
     }
 
-    public void setAchievementId(Integer achievementId) {
-        AchievementId = achievementId;
-    }
-
     public String getAchievementName() {
         return AchievementName;
     }

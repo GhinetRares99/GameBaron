@@ -59,15 +59,6 @@ public class GameServiceTests {
     }
 
     @Test
-    void updateGameIdTest(){
-        Game testGame = new Game(1, "TestName", "TestGenre", "TestCreator", "TestPublisher", "TestDescription", 0, null, null, null);
-        Integer newId = 2;
-
-        testGame.setGameId(newId);
-        assertEquals(newId, testGame.getGameId());
-    }
-
-    @Test
     void updateGameTest_updatesAll(){
         Game testGame = new Game(1, "TestName", "TestGenre", "TestCreator", "TestPublisher", "TestDescription", 0, null, null, null);
         when(gameRepository.findById(testGame.getGameId())).thenReturn(Optional.of(testGame));

@@ -39,10 +39,6 @@ public class Possession {
         return PossessionId;
     }
 
-    public void setPossessionId(Integer possessionId) {
-        PossessionId = possessionId;
-    }
-
     public User getUser() {
         return user;
     }

@@ -45,10 +45,6 @@ public class Tool {
         return ToolId;
     }
 
-    public void setToolId(Integer toolId) {
-        ToolId = toolId;
-    }
-
     public String getToolName() {
         return ToolName;
     }

@@ -74,10 +74,6 @@ public class Game {
         return GameId;
     }
 
-    public void setGameId(Integer gameId) {
-        GameId = gameId;
-    }
-
     public String getGameName() {
         return GameName;
     }

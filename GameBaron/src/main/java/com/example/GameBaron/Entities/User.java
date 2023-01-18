@@ -86,10 +86,6 @@ public class User {
         return UserId;
     }
 
-    public void setUserId(Integer userId) {
-        UserId = userId;
-    }
-
     public String getPassword() {
         return Password;
     }

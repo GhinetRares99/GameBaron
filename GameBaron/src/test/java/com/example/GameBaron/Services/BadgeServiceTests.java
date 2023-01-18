@@ -75,17 +75,6 @@ public class BadgeServiceTests {
     }
 
     @Test
-    void updateBadgeIdTest(){
-        User testUser = new User(1,"TestName", "TestPassword","TestFN", "TestLN", "TestEmail", "TestPhone", 0, "TestCountry", "TestCity", "TestStreet", null, null);
-        Badge testBadge = new Badge(1,"TestName", "TestDescription", testUser);
-
-        Integer newId = 2;
-
-        testBadge.setBadgeId(newId);
-        assertEquals(newId, testBadge.getBadgeId());
-    }
-
-    @Test
     void updateBadgeTest_updatesAll(){
         User testUser = new User(1,"TestName", "TestPassword","TestFN", "TestLN", "TestEmail", "TestPhone", 0, "TestCountry", "TestCity", "TestStreet", null, null);
         Badge testBadge = new Badge(1,"TestName", "TestDescription", testUser);

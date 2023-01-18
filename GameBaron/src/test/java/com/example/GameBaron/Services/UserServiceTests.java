@@ -72,15 +72,6 @@ public class UserServiceTests {
     }
 
     @Test
-    void updateUserIdTest(){
-        User testUser = new User(1, "TestName", "TestPassword","TestFN", "TestLN", "TestEmail", "TestPhone", 0, "TestCountry", "TestCity", "TestStreet", null, null);
-        Integer newId = 2;
-
-        testUser.setUserId(newId);
-        assertEquals(newId, testUser.getUserId());
-    }
-
-    @Test
     void updateUserTest_updatesAll(){
         User testUser = new User(1,"TestName", "TestPassword","TestFN", "TestLN", "TestEmail", "TestPhone", 0, "TestCountry", "TestCity", "TestStreet", null, null);
         when(userRepository.findById(testUser.getUserId())).thenReturn(Optional.of(testUser));

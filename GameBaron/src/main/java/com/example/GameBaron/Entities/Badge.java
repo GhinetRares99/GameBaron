@@ -41,10 +41,6 @@ public class Badge {
         return BadgeId;
     }
 
-    public void setBadgeId(Integer badgeId) {
-        BadgeId = badgeId;
-    }
-
     public String getBadgeName() {
         return BadgeName;
     }

@@ -76,17 +76,6 @@ public class AchievementServiceTests {
     }
 
     @Test
-    void updateAchievementIdTest(){
-        Game testGame = new Game(1, "TestName", "TestGenre", "TestCreator", "TestPublisher", "TestDescription", 0, null, null, null);
-        Achievement testAchievement = new Achievement(1, "TestName", "TestDescription", "TestRarity", testGame);
-
-        Integer newId = 2;
-
-        testAchievement.setAchievementId(newId);
-        assertEquals(newId, testAchievement.getAchievementId());
-    }
-
-    @Test
     void updateAchievementTest_updatesAll(){
         Game testGame = new Game(1, "TestName", "TestGenre", "TestCreator", "TestPublisher", "TestDescription", 0, null, null, null);
         Achievement testAchievement = new Achievement(1, "TestName", "TestDescription", "TestRarity", testGame);

@@ -76,17 +76,6 @@ public class ToolServiceTests {
     }
 
     @Test
-    void updateToolIdTest(){
-        Game testGame = new Game(1, "TestName", "TestGenre", "TestCreator", "TestPublisher", "TestDescription", 0, null, null, null);
-        Tool testTool = new Tool(1,"TestName", "TestDescription", "TestVersion", testGame);
-
-        Integer newId = 2;
-
-        testTool.setToolId(newId);
-        assertEquals(newId, testTool.getToolId());
-    }
-
-    @Test
     void updateToolTest_updatesAll(){
         Game testGame = new Game(1, "TestName", "TestGenre", "TestCreator", "TestPublisher", "TestDescription", 0, null, null, null);
         Tool testTool = new Tool(1,"TestName", "TestDescription", "TestVersion", testGame);
