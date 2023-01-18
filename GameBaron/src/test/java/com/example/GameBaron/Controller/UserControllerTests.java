@@ -53,7 +53,7 @@ public class UserControllerTests {
         User testUser = new User(1, "TestName", "TestPassword","TestFN", "TestLN", "TestEmail", "TestPhone", 0, "TestCountry", "TestCity", "TestStreet", null, null);
         when(userService.getUsers()).thenReturn(List.of(testUser));
 
-        mockMvc.perform(get("/GameBaron/User/getUsers").contentType("application/json").content(objectMapper.writeValueAsString(testUser))).andExpect(status().isOk());
+        mockMvc.perform(get("/GameBaron/User/getUsers").contentType("application/json")).andExpect(status().isOk());
     }
 
     @Test
